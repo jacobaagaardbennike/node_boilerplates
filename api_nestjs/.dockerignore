@@ -1,0 +1,22 @@
+# Node
+dist
+node_modules
+.env
+npm-debug.log*
+
+# Mikro-orm
+temp/
+src/migrations
+
+# Azure
+azure-pipelines.yml
+
+# Docker
+.dockerignore
+Dockerfile
+Dockerfile.dev
+docker-compose.yml
+
+# Git
+.git
+.gitignore

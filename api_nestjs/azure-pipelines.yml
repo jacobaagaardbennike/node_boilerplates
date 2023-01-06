@@ -1,0 +1,21 @@
+trigger:
+  - main
+  - dev/*
+
+variables:
+  CONTAINERREGISTRY: 'CHANGEME'
+  REPOSITORY: 'CHANGEME'
+
+jobs:
+  - job: BuildDockerImage
+    displayName: 'Build Docker Image'
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - task: Docker@2
+        inputs:
+          containerRegistry: '$(CONTAINERREGISTRY)'
+          repository: '$(REPOSITORY)'
+          command: 'buildAndPush'
+          Dockerfile: '**/Dockerfile'
+          
